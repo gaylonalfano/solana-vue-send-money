@@ -1,10 +1,11 @@
 <template>
+  <h1>Wallet: {{ walletRef }}</h1>
   <SenderForm />
-  <TransactionsList />
+  <TransactionsList :transactions="transactionsRef" />
 </template>
 
 <script lang="ts">
-import { Connection } from "@@solana/web3.js";
+import { Connection } from "@solana/web3.js";
 import { defineComponent, watchEffect, ref } from "vue";
 import SenderForm from "./components/SenderForm.vue";
 import TransactionsList from "./components/TransactionsList.vue";
@@ -41,6 +42,8 @@ export default defineComponent({
         }
       });
     });
+
+    return { transactionsRef, walletRef };
   },
 });
 </script>

@@ -11,10 +11,7 @@
 import { ref, defineComponent } from "vue";
 export default defineComponent({
   name: "TransactionsList",
-  setup: () => {
-    const transactions: string[] = ["trans1", "trans2", "trans3"];
-    return { transactions };
-  },
+  props: ["transactions"],
 });
 </script>
 

@@ -24,7 +24,8 @@ export interface WalletAdapter extends EventEmitter {
 }
 
 // === Setup base fields we need
-const cluster = "https://devnet.solana.com";
+// const cluster = "https://devnet.solana.com";
+const cluster = "https://api.devnet.solana.com";
 // NOTE "confirmed" is the confirmation level we're going to use
 // when querying the blockchain. There are other levels (final for 2/3 nodes),
 // but "confirmed" is confirmation by one node.
@@ -116,16 +117,3 @@ export async function signAndSendTransaction(
   // 3. Return the string signature
   return signature;
 }
-
-// function useWallet() {
-//   return {
-//     // Q: How to export a type or interface?
-//     initWallet,
-//     sendMoney,
-//     setWalletTransaction,
-//     signAndSendTransaction,
-//   };
-// }
-
-// WITH useWallet()
-// export default useWallet;
